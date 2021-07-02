@@ -10,16 +10,16 @@
 
 void ez_bombyx(int ac, char **av)
 {
-    return ;
-}
-
-void gitgud_bombyx(int ac, char **av)
-{
     double n = 0;
     double k = 0;
 
     sscanf(av[1], "%lf", &n);
     sscanf(av[2], "%lf", &k);
+    return ;
+}
+
+void gitgud_bombyx(int ac, char **av)
+{
     return ;
 }
 
