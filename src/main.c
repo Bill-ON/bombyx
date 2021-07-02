@@ -30,10 +30,21 @@ void gitgud_bombyx(int ac, char **av)
     double i0 = 0;
     double i1 = 0;
     double k = 1;
+    double sub = 0;
+    double res = 0;
 
     sscanf(av[1], "%lf", &n);
     sscanf(av[2], "%lf", &i0);
     sscanf(av[3], "%lf", &i1);
+    sub = i1 - i0;
+    res = n;
+
+    for (int i = 0; i < (int)i1; i++) {
+        if (i > i0)
+            k += 0.01;
+        printf("%.2f %.2f\n", k, res);
+        res = k*res*((1000-res)/1000);
+    }
     return ;
 }
 
