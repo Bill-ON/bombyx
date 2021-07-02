@@ -10,13 +10,10 @@
 
 void ez_bombyx(int ac, char **av)
 {
-    double n = 0;
-    double k = 0;
-    double ind = 0;
+    double n = atof(av[1]);
+    double k = atof(av[2]);
+    double ind = n;
 
-    sscanf(av[1], "%lf", &n);
-    sscanf(av[2], "%lf", &k);
-    ind = n;
     for (int i = 1; i < 101; i++) {
         printf("%d %.2f\n", i, ind);
         ind = k*ind*((1000-ind)/1000);
@@ -26,18 +23,12 @@ void ez_bombyx(int ac, char **av)
 
 void gitgud_bombyx(int ac, char **av)
 {
-    double n = 0;
-    double i0 = 0;
-    double i1 = 0;
+    double n = atof(av[1]);
+    double i0 = atof(av[2]);
+    double i1 = atof(av[3]);
     double k = 1;
-    double sub = 0;
-    double res = 0;
-
-    sscanf(av[1], "%lf", &n);
-    sscanf(av[2], "%lf", &i0);
-    sscanf(av[3], "%lf", &i1);
-    sub = i1 - i0;
-    res = n;
+    double sub = i1 - i0;
+    double res = n;
 
     for (int i = 0; i < (int)i1; i++) {
         if (i > i0)

@@ -22,9 +22,8 @@ void man(void)
 
 int check_syntax_3args(int ac, char **av)
 {
-    double k;
+    double k = atof(av[2]);
 
-    sscanf(av[2], "%lf", &k);
     if (k < 1 || k > 4)
         return 84;
     return 0;
@@ -32,13 +31,11 @@ int check_syntax_3args(int ac, char **av)
 
 int check_syntax_4args(int ac, char **av)
 {
-    double i0 = 0;
-    double i1 = 0;
+    double i0 = atof(av[2]);
+    double i1 = atof(av[3]);
 
-    sscanf(av[2], "%lf", &i0);
     if ((i0 - (int)i0) != 0)
         return 84;
-    sscanf(av[3], "%lf", &i1);
     if ((i1 - (int)i1) != 0)
         return 84;
     return 0;
@@ -46,8 +43,7 @@ int check_syntax_4args(int ac, char **av)
 
 int error_handling(int ac, char **av)
 {
-    double n = 0;
-    double k = 0;
+    double n = atof(av[1]);
 
     if (ac == 2 && my_strcmp("-h", av[1]) == 0) {
         man();
@@ -55,7 +51,6 @@ int error_handling(int ac, char **av)
     }
     if (ac < 3 || ac > 4)
         return 84;
-    sscanf(av[1], "%lf", &n);
     if ((n - (int)n) != 0)
         return 84;
     if (ac == 3 && check_syntax_3args(ac, av) == 84)
