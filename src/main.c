@@ -12,14 +12,28 @@ void ez_bombyx(int ac, char **av)
 {
     double n = 0;
     double k = 0;
+    double ind = 0;
 
     sscanf(av[1], "%lf", &n);
     sscanf(av[2], "%lf", &k);
+    ind = n;
+    for (int i = 1; i < 101; i++) {
+        printf("%d %.2f\n", i, ind);
+        ind = k*ind*((1000-ind)/1000);
+    }
     return ;
 }
 
 void gitgud_bombyx(int ac, char **av)
 {
+    double n = 0;
+    double i0 = 0;
+    double i1 = 0;
+    double k = 1;
+
+    sscanf(av[1], "%lf", &n);
+    sscanf(av[2], "%lf", &i0);
+    sscanf(av[3], "%lf", &i1);
     return ;
 }
 
