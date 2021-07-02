@@ -1,0 +1,6 @@
+*.o
+106bombyx
+*.gcno
+vgcore*
+*~
+\#*
